@@ -1,6 +1,6 @@
 /*
 Author: Matthew Sleight
-Date: September 16, 2024
+Date: October 7, 2024
 File Name: styles.css
 */
 
@@ -16,19 +16,36 @@ h1 {
     margin: 0;
     padding: 0;
     border: 0;
-    color: #006600;
-    text-shadow: -1px -1px 0 #00b300, 1px -1px 0 #00b300, -1px 1px 0 #00b300, 1px 1px 0 #00b300;
+    color: #00008B;
+    text-shadow: -1px -1px 0 #5F9EA0, 1px -1px 0 #5F9EA0, -1px 1px 0 #5F9EA0, 1px 1px 0 #5F9EA0;
+}
+
+/* h2 Style */
+h2 {
+    background-color: #CFCFCF;
+    border-style: solid;
+    border-width: 4px;
+    border-color: black;
+    width: 300px;
+    height: 300px;
+    margin: auto;
+    padding: 10px;
+}
+
+/* h3 Style */
+h3 {
+    color: #2B2E63;
 }
 
 /* Style rule for body and images */
 body {
-    background-color: #e2eae2;
+    background-color: #84A7BA;
 }
 
 img {
     max-width: 100%;
     display: block;
-    border: 5px solid #003300;
+    border: 5px solid #303655;
 }
 
 /* Style rules for mobile viewport */
@@ -46,7 +63,7 @@ img {
 header {
     text-align: center;
     color: #006600;
-    background-color: #98b497;
+    background-color: #6F90AF;
 }
 
 header h1 {
@@ -67,7 +84,7 @@ header h3 {
 
 /* Style rules for navigation area */
 nav {
-    background-color: #132913;
+    background-color: #303655;
 }
 
 nav ul {
@@ -143,7 +160,7 @@ main ul {
 footer {
     text-align: center;
     font-size: 0.75em;
-    background-color: #132913;
+    background-color: #303655;
     color: #e2eae2;
     padding: 1% 0;
 }
