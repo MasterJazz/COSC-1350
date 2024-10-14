@@ -13,6 +13,7 @@
 		<link rel="stylesheet" href="css/styles.css">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link href="https://fonts.googleapis.com/css?family=Ultra&display=swap" rel="stylesheet">
+		<script scr="myWebsite\calculatorMath\calculatorMath.js"></script>
 	</head>
 
 	<body>
@@ -39,17 +40,18 @@
 				<p style="margin: 7%; text-align: center;">Tip Calculator</p>
 				<p style="font-size: 85%; margin: 5%;">
 					Bill Amount:
-					<input type="text" name="fName" id="fName" style="margin-bottom: 3%;">
+					<input type="number" value="0" step=".01" style="margin-bottom: 3%;">
 					<br>
 					Service Quality:
 					<select name="tip" style="font-size: 75%;">
-						<option>Excellent (25%)</option>
-						<option>Good (20%)</option>
-						<option>Fair (15%)</option>
-						<option>Poor (10%)</option>
+						<option value=.25>Excellent (25%)</option>
+						<option value=.20>Good (20%)</option>
+						<option value=.15>Fair (15%)</option>
+						<option value=.10>Poor (10%)</option>
 					</select>
 				</p>
-				<input type="button" onclick="alert('You are a very cool person :D (W.I.P.)')" value="Calculate Tip" style="margin-left: 5%; margin-bottom: 5%; font-size: 80%; background-color: #40B5AD">
+				<input type="button" id="calculateTip" value="Calculate Tip" onclick="main()" style="margin-left: 5%; margin-bottom: 5%; font-size: 80%; background-color: #40B5AD">
+				<p id="calculate">Results</p>
 			</h2>
 		</main>
 
