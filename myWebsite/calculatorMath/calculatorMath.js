@@ -4,7 +4,7 @@
     Date: 10/13/2024
 */
 
-function main() {
+function calculator() {
     /* Get the value of the bill amount from the input field */
     const theBillAmount = document.getElementById("billAmount").value;
     /* Get the value of the tip percentage from the input field */
@@ -28,7 +28,7 @@ function calculate(theBillAmount, theTipPercentage) {
     /* Validate the user input */
     if (theBillAmount <= 0) {
         alert("Your input was invalid.");
-        return main;
+        return calculator;
     }
     else {
         /* Calculate tip */

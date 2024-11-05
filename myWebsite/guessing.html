@@ -2,17 +2,24 @@
 
 <!--
 	Student Name: Matthew Sleight
-	File Name: template.html
+	File Name: guessing.html
 	Date: November 4, 2024
  -->
 
 <html lang="en">
 	<head>
-		<title>About Me</title>
+		<title>Number Guessing Game</title>
 		<meta charset="utf-8">
 		<link rel="stylesheet" href="css/styles.css">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link href="https://fonts.googleapis.com/css?family=Ultra&display=swap" rel="stylesheet">
+		<script src=".\guessingGame\guessingGame.js"></script>
+		<script>
+			// Start the game when the page loads
+			window.onload = function() {
+				startGame();
+			};
+		</script>
 	</head>
 
 	<body>
@@ -36,31 +43,26 @@
 
 		<!-- Use the main area to add the main content of the webpage -->
 		<main>
-			<p style="text-align: center;">About Me:</p>
-
-			<div id="main">
-				<p style="text-align: center;">My name is Matthew Sleight. I'm currently majoring in Computer Science.
-				   I was born in Rock Springs, Wyoming and I'm currently studying at Western
-				   Wyoming Community College. Some of my favorite foods consist of:</p>
-
-				<ol>
-					<ul>
-						<li>Chicken Enchilada</li>
-						<li>Meat Pizza</li>
-						<li>Bacon Cheeseburger</li>
-						<li>Chocolate Ice Cream</li>
-						<li>Rice Krispie Treats</li>
-					</ul>
-				</ol>
-			</div>
-
+			<h3>
+				<p style="font-size: 200%; margin: 4%; text-align: center">Number Guessing Game</p>
+				<p style="font-size: 100%; margin-left: 2%">
+					We have selected a random number between 1 and 100. See if you can guess it in 10
+					turns or fewer. We'll tell you if your guess was too high or too low.
+				</p>
+				<p style="margin-left: 2%">
+					Enter a guess:
+					<input type="number" id="guessInput" value="0" min="1" max="100" step="1.00" style="text-align: center; font-size: 90%;">
+					<input type="button" id="submitResponse" value="Submit Guess" onclick="guess()" style="font-size: 80%; background-color: #40B5AD">
+				</p>
+				<p id="message" style="font-size: 110%;"></p>
+				<p id="remainingTurns" style="font-size: 100%;"></p>
+				<p id="previousGuesses" style="font-size: 100%;"></p>
+				<input type="button" value="Play Again" onclick="restartGame()" style="font-size: 110%; margin-left: 2%; background-color: #40B5AD">
+			</h3>
 		</main>
 
 		<!-- Use the footer area to add static footer content, such as email and copyright info. -->
 		<footer>
-			<p>My email: 
-				<a href="mailto:matthewsleight@westernwyoming.edu">matthewsleight@westernwyoming.edu</a>
-			</p>
 			<p>&copy; Copyright 2024. All Rights Reserved.</p>
 		</footer>
 	</body>
