@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+
+<!--
+	Student Name: Matthew Sleight
+	File Name: template.html
+	Date: October 7, 2024
+ -->
+
+<html lang="en">
+	<head>
+		<title>Shapes</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="css/styles.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="https://fonts.googleapis.com/css?family=Ultra&display=swap" rel="stylesheet">
+		<script src=".\shapes\shapes.js" defer></script>
+	</head>
+
+	<body>
+
+		<!-- Use the header area for the website name or logo. The header contains static content. -->
+		<header>
+			<h1>Matthew Sleight</h1>
+			<img src="./images/matthewimage.png" alt="Picture of Matthew Sleight" class="center" height="500" width="500">
+		</header>
+
+		<!-- Use the nav area to add hyperlinks to other pages within the website. It contains static content. -->
+		<nav>
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="about.html">About Me</a></li>
+				<li><a href="contact.html">Contact</a></li>
+				<li><a href="calculator.html">Calculator</a></li>
+				<li><a href="guessing.html">Guessing Game</a></li>
+				<li><a href="shapes.html">Shapes</a></li>
+			</ul>
+		</nav>
+
+		<!-- Use the main area to add the main content of the webpage -->
+		<main>
+			<h3>
+				<p style="text-align: center;">Random Shapes</p>
+				<canvas width="600" height="400">
+					<script defer>
+						// Call shape functions
+						trapezoid();
+						redDiamond();
+						zigzag();
+						spiral();
+						star();
+
+						// Creating the functions
+						function trapezoid() {
+							let canvas = document.querySelector("canvas");
+							let context = canvas.getContext("2d");
+								
+							context.beginPath();
+							context.moveTo(40, 25);
+							context.lineTo(10, 70);
+							context.lineTo(110, 70);
+							context.lineTo(80, 25);
+							context.lineTo(40, 25);
+							context.closePath();
+
+							context.stroke();
+						}
+
+						function redDiamond() {
+							let canvas = document.querySelector("canvas");
+							let context = canvas.getContext("2d");
+								
+							context.beginPath();
+							context.moveTo(150, 70);
+							context.lineTo(125, 45);
+							context.lineTo(150, 20);
+							context.lineTo(175, 45);
+							context.closePath();
+
+							context.fillStyle = "red";
+							context.fill();
+						}
+
+						function zigzag() {
+							let canvas = document.querySelector("canvas");
+							let context = canvas.getContext("2d");
+
+							context.beginPath();
+							let startX = 200; // Starting 'x' position
+							let step = 50; // Step size for the zigzag pattern
+							let direction = 1; // To alternate direction (right or left)
+
+							for (let y = 15; y < 80; y += 5) {
+								context.lineTo(startX, y);
+								startX += step * direction; // Move right or left
+								direction *= -1; // Flip direction
+							}
+
+							context.stroke();
+						}
+
+						function spiral() {
+							let canvas = document.querySelector("canvas");
+							let context = canvas.getContext("2d");
+							
+							context.beginPath();
+							var radius = 0;
+							var angle = 0;
+
+							for (var n = 0; n < 130; n++) {
+								radius += 0.35;
+								angle += (Math.PI * 2) / 35;
+
+								// Calculate the 'x' and 'y' position for each point
+								var x = 650 / 2 + radius * Math.cos(angle);
+								var y = 100 / 2 + radius * Math.sin(angle);
+
+								// Draw a line to the next point
+								context.lineTo(x, y);
+							}
+
+							context.stroke();
+						}
+
+						function star() {
+							let canvas = document.querySelector("canvas");
+							let context = canvas.getContext("2d");
+
+							context.beginPath();
+							context.moveTo(455, 20);
+							context.lineTo(465, 45);
+							context.lineTo(490, 45);
+							context.lineTo(475, 65);
+							context.lineTo(480, 90);
+							context.lineTo(455, 75);
+							context.lineTo(430, 90);
+							context.lineTo(435, 65);
+							context.lineTo(420, 45);
+							context.lineTo(445, 45);
+							context.lineTo(455, 20);
+
+							context.fillStyle = "yellow";
+							context.fill();
+							context.strokeStyle = "#000";
+							context.stroke();
+						}
+					</script>
+				</canvas>
+			</h3>
+		</main>
+
+		<!-- Use the footer area to add static footer content, such as email and copyright info. -->
+		<footer>
+			<p>&copy; Copyright 2024. All Rights Reserved.</p>
+		</footer>
+	</body>
+</html>
