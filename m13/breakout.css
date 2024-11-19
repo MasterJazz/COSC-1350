@@ -1,0 +1,40 @@
+/*
+Author: Matthew Sleight
+Date: November 18, 2024
+File Name: breakout.css
+*/
+
+/* CSS Reset */
+body, header, nav, main, footer, img, h3, ul {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background-color: #84A7BA;
+}
+
+/* h1 Style */
+h1 {
+    background-color: #00008B;
+    border-radius: 10px;
+    color: #84A7BA;
+    width: 350px;
+    height: 50px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+/* h2 Style */
+h2 {
+    text-align: center;
+    margin-top: 10%; 
+}
+
+ #myCanvas {
+    border-style: solid;
+    border-width: 10px;
+    background-color: #CFCFCF;
+} 
+
+canvas {
+    border-style: solid;
+}
