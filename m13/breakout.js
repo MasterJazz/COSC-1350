@@ -2,7 +2,7 @@
  *
  * breakout.js
  * Author: Matthew Sleight
- * Date: November 25, 2024
+ * Date: December 8, 2024
  * Project for COSC 1350
  *
  */
@@ -43,6 +43,9 @@ const brickHeight = 25;
 const brickPadding = 10;
 const brickTopOffset = 40;
 const brickLeftOffset = 5;
+
+// Define a score property
+let score = 0;
 
 // Brick array
 let bricks = [];
@@ -106,6 +109,12 @@ function collisionDetection() {
           // Ball hit the brick, bounce and update the brick's status
           yMoveDist = -yMoveDist;
           b.status = 0; // Set brick as "hit"
+          score++;
+          if (score == brickRows * brickColumns) {
+            alert("You Win! Congratulations!");
+            document.location.reload();
+            clearInterval(intervalID);
+          }
         }
       }
     }
@@ -153,6 +162,13 @@ function drawBricks() {
   }
 }
 
+// Function that draws the score on the canvas
+function drawScore() {
+  ctx.font = "30px 'Courier New', Courier, monospace";
+  ctx.fillStyle = "#00008B";
+  ctx.fillText("Score: " + score, 8, 30);
+}
+
 // Create a gameOver flag to prevent further game actions
 let gameOver = false;
 
@@ -179,6 +195,7 @@ draw=()=> {
   paddle();
   drawBricks();
 
+  drawScore();
   collisionDetection();
 
   // Ball movement
@@ -246,8 +263,14 @@ function startGame() {
   setInterval(draw, 25);
 }
 
-// Event listener for button click
+// Event listener for start button
 document.getElementById("runButton").addEventListener("click", function () {
   startGame();
   this.disabled = true; // Disable the button to prevent clicking again
 });
+
+// Event listener for reset button
+document.getElementById("resetButton").addEventListener("click", function() {
+  // Reload the page to reset the game
+  document.location.reload();
+})

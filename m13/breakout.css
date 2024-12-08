@@ -1,6 +1,6 @@
 /*
 Author: Matthew Sleight
-Date: November 25, 2024
+Date: December 8, 2024
 File Name: breakout.css
 */
 
@@ -40,7 +40,7 @@ canvas {
     border-style: solid;
 }
 
-button {
+#runButton {
     position: absolute;
     top: 45%;
     left: 50%;
@@ -52,8 +52,28 @@ button {
     border-radius: 10px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    font-family: 'Courier New', Courier, monospace;
 }
 
-button:hover {
+#runButton:hover {
     background-color: rgba(0, 0, 139, 1) /* Solid blue background on hover */
+}
+
+#resetButton {
+    position: absolute;
+    top: 105%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    font-size: 20px;
+    background-color: rgba(0, 0, 139, 0.7); /* Transparent blue background */
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#resetButton:hover {
+    background-color: rgba(0, 0, 139, 1); /* Solid blue background on hover */
 }
